@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Blog</title>
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome for icons (social sharing, search, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Blog logo / title -->
+      <a href="#" class="logo" aria-label="The Daily Blog Home">
+        <i class="fa-solid fa-pen-nib"></i> The Daily Blog
+      </a>
+
+      <!-- Hamburger toggle for mobile nav -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+      <!-- Primary navigation -->
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#" class="nav-link active" data-filter="all">All Posts</a></li>
+          <li><a href="#" class="nav-link" data-filter="technology">Technology</a></li>
+          <li><a href="#" class="nav-link" data-filter="travel">Travel</a></li>
+          <li><a href="#" class="nav-link" data-filter="science">Science</a></li>
+          <li><a href="#" class="nav-link" data-filter="lifestyle">Lifestyle</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO / SEARCH ===================== -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Welcome to The Daily Blog</h1>
+      <p class="hero-subtitle">Insights on technology, travel, science, and everyday life.</p>
+
+      <!-- Search bar for finding specific blog posts -->
+      <div class="search-wrapper" role="search">
+        <label for="searchInput" class="sr-only">Search blog posts</label>
+        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search posts…"
+          aria-label="Search blog posts"
+          autocomplete="off"
+        />
+        <button class="search-btn" id="searchBtn" aria-label="Submit search">Search</button>
+      </div>
+
+      <!-- No results message (hidden by default) -->
+      <p class="no-results" id="noResults" hidden>No posts match your search. Try a different keyword.</p>
+    </div>
+  </section>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="main-content" id="main">
+    <div class="container posts-grid" id="postsGrid">
+
+      <!-- ============ POST 1: Technology ============ -->
+      <article class="post-card" id="post-1" data-category="technology" aria-label="Blog post: The Rise of Artificial Intelligence">
+        <!-- Post image with alt text -->
+        <figure class="post-image-wrap">
+          <img
+            src="https://picsum.photos/seed/ai/800/450"
+            alt="Abstract AI brain network visualization"
+            class="post-image"
+            loading="lazy"
+          />
+          <figcaption class="post-category-badge">Technology</figcaption>
+        </figure>
+
+        <div class="post-body">
+          <!-- Post meta: date and read time -->
+          <div class="post-meta">
+            <time datetime="2025-10-15">October 15, 2025</time>
+            <span class="read-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 min read</span>
+          </div>
+
+          <!-- Post title -->
+          <h2 class="post-title">The Rise of Artificial Intelligence</h2>
+
+          <!-- Post content -->
+          <div class="post-content">
+            <p>
+              Artificial Intelligence has transitioned from science-fiction fantasy to everyday reality faster than
+              most experts predicted. From voice assistants on our phones to self-driving vehicles navigating busy
+              city streets, AI is reshaping how we live and work.
+            </p>
+            <p>
+              Machine learning models are now capable of diagnosing diseases, composing music, writing code, and
+              even generating photorealistic images from simple text prompts. These capabilities raise important
+              questions about creativity, authorship, and the future of work.
+            </p>
+            <p>
+              As we embrace these technologies, we must also grapple with their ethical implications — algorithmic
+              bias, data privacy, and the displacement of certain jobs. Building AI that is transparent, fair, and
+              aligned with human values is one of the defining challenges of our generation.
+            </p>
+          </div>
+
+          <!-- Tags for categorizing posts -->
+          <div class="post-tags" aria-label="Tags">
+            <span class="tag">AI</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Future</span>
+          </div>
+
+          <!-- Social media sharing buttons -->
+          <div class="share-buttons" aria-label="Share this post">
+            <span class="share-label">Share:</span>
+            <a href="https://twitter.com/intent/tweet?text=The+Rise+of+Artificial+Intelligence&url=%23post-1"
+               class="share-btn share-twitter" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=%23post-1"
+               class="share-btn share-facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&title=The+Rise+of+Artificial+Intelligence&url=%23post-1"
+               class="share-btn share-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <!-- Comment section for post 1 -->
+          <section class="comment-section" aria-label="Comments for post 1">
+            <h3 class="comment-section-title"><i class="fa-regular fa-comments" aria-hidden="true"></i> Comments</h3>
+
+            <!-- List where JS will inject submitted comments -->
+            <ul class="comment-list" id="comments-1" aria-live="polite" aria-label="Comment list"></ul>
+
+            <!-- Comment submission form -->
+            <form class="comment-form" data-post="1" novalidate aria-label="Leave a comment">
+              <h4 class="form-heading">Leave a Comment</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name-1">Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="name-1" class="form-input" placeholder="Your name" required maxlength="80" />
+                </div>
+                <div class="form-group">
+                  <label for="email-1">Email (optional)</label>
+                  <input type="email" id="email-1" class="form-input" placeholder="you@example.com" maxlength="120" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message-1">Message <span aria-hidden="true">*</span></label>
+                <textarea id="message-1" class="form-input form-textarea" placeholder="Share your thoughts…" required maxlength="1000"></textarea>
+              </div>
+              <p class="form-error" id="error-1" role="alert" hidden></p>
+              <button type="submit" class="btn-submit">Post Comment</button>
+            </form>
+          </section>
+        </div>
+      </article>
+
+      <!-- ============ POST 2: Travel ============ -->
+      <article class="post-card" id="post-2" data-category="travel" aria-label="Blog post: Hidden Gems of Southeast Asia">
+        <figure class="post-image-wrap">
+          <img
+            src="https://picsum.photos/seed/travel/800/450"
+            alt="Lush tropical landscape with temples in Southeast Asia"
+            class="post-image"
+            loading="lazy"
+          />
+          <figcaption class="post-category-badge">Travel</figcaption>
+        </figure>
+
+        <div class="post-body">
+          <div class="post-meta">
+            <time datetime="2025-11-02">November 2, 2025</time>
+            <span class="read-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 min read</span>
+          </div>
+
+          <h2 class="post-title">Hidden Gems of Southeast Asia</h2>
+
+          <div class="post-content">
+            <p>
+              Southeast Asia beckons travellers with a kaleidoscope of ancient temples, pristine beaches, vibrant
+              street-food scenes, and warm hospitality. While popular destinations like Bali and Bangkok often steal
+              the spotlight, the region is home to countless under-the-radar treasures waiting to be discovered.
+            </p>
+            <p>
+              Consider the sleepy riverside town of Luang Prabang in Laos, where golden-roofed temples glow at
+              sunrise and saffron-clad monks perform their daily alms-giving ceremony. Or venture to the Mekong
+              Delta in Vietnam, where floating markets burst with colour at dawn as locals trade tropical fruits from
+              wooden boats.
+            </p>
+            <p>
+              From the prehistoric cave systems of Phong Nha to the turquoise waters of the Komodo Islands,
+              Southeast Asia rewards the curious traveller with experiences that linger in memory for a lifetime.
+              Pack light, travel slowly, and let serendipity be your guide.
+            </p>
+          </div>
+
+          <div class="post-tags" aria-label="Tags">
+            <span class="tag">Travel</span>
+            <span class="tag">Asia</span>
+            <span class="tag">Adventure</span>
+          </div>
+
+          <div class="share-buttons" aria-label="Share this post">
+            <span class="share-label">Share:</span>
+            <a href="https://twitter.com/intent/tweet?text=Hidden+Gems+of+Southeast+Asia&url=%23post-2"
+               class="share-btn share-twitter" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=%23post-2"
+               class="share-btn share-facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&title=Hidden+Gems+of+Southeast+Asia&url=%23post-2"
+               class="share-btn share-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <section class="comment-section" aria-label="Comments for post 2">
+            <h3 class="comment-section-title"><i class="fa-regular fa-comments" aria-hidden="true"></i> Comments</h3>
+            <ul class="comment-list" id="comments-2" aria-live="polite" aria-label="Comment list"></ul>
+            <form class="comment-form" data-post="2" novalidate aria-label="Leave a comment">
+              <h4 class="form-heading">Leave a Comment</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name-2">Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="name-2" class="form-input" placeholder="Your name" required maxlength="80" />
+                </div>
+                <div class="form-group">
+                  <label for="email-2">Email (optional)</label>
+                  <input type="email" id="email-2" class="form-input" placeholder="you@example.com" maxlength="120" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message-2">Message <span aria-hidden="true">*</span></label>
+                <textarea id="message-2" class="form-input form-textarea" placeholder="Share your thoughts…" required maxlength="1000"></textarea>
+              </div>
+              <p class="form-error" id="error-2" role="alert" hidden></p>
+              <button type="submit" class="btn-submit">Post Comment</button>
+            </form>
+          </section>
+        </div>
+      </article>
+
+      <!-- ============ POST 3: Science ============ -->
+      <article class="post-card" id="post-3" data-category="science" aria-label="Blog post: Exploring the James Webb Space Telescope's Greatest Discoveries">
+        <figure class="post-image-wrap">
+          <img
+            src="https://picsum.photos/seed/space/800/450"
+            alt="Deep space nebula captured by a telescope"
+            class="post-image"
+            loading="lazy"
+          />
+          <figcaption class="post-category-badge">Science</figcaption>
+        </figure>
+
+        <div class="post-body">
+          <div class="post-meta">
+            <time datetime="2025-11-20">November 20, 2025</time>
+            <span class="read-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 7 min read</span>
+          </div>
+
+          <h2 class="post-title">JWST's Greatest Discoveries So Far</h2>
+
+          <div class="post-content">
+            <p>
+              Launched on Christmas Day 2021 and reaching its operational orbit by mid-2022, the James Webb Space
+              Telescope has already revolutionised our understanding of the cosmos. Its gold-coated mirror segments
+              and cutting-edge infrared instruments peer through dust clouds that were opaque to the Hubble Space
+              Telescope, revealing stellar nurseries and ancient galaxies in breathtaking detail.
+            </p>
+            <p>
+              Among JWST's most celebrated early observations are images of the Carina Nebula — dubbed the
+              "Cosmic Cliffs" — where towering pillars of gas and dust silhouette newly forming stars. The telescope
+              has also detected atmospheric signatures on exoplanets, bringing humanity closer to answering the
+              profound question: is there life beyond Earth?
+            </p>
+            <p>
+              Scientists have used JWST data to detect the earliest known galaxies, formed just a few hundred
+              million years after the Big Bang. These ancient light echoes are rewriting textbooks and challenging
+              existing models of galaxy formation. The telescope's planned operational lifespan of over a decade
+              promises many more landmark discoveries to come.
+            </p>
+          </div>
+
+          <div class="post-tags" aria-label="Tags">
+            <span class="tag">Space</span>
+            <span class="tag">Science</span>
+            <span class="tag">JWST</span>
+          </div>
+
+          <div class="share-buttons" aria-label="Share this post">
+            <span class="share-label">Share:</span>
+            <a href="https://twitter.com/intent/tweet?text=JWST+Greatest+Discoveries&url=%23post-3"
+               class="share-btn share-twitter" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=%23post-3"
+               class="share-btn share-facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&title=JWST+Greatest+Discoveries&url=%23post-3"
+               class="share-btn share-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <section class="comment-section" aria-label="Comments for post 3">
+            <h3 class="comment-section-title"><i class="fa-regular fa-comments" aria-hidden="true"></i> Comments</h3>
+            <ul class="comment-list" id="comments-3" aria-live="polite" aria-label="Comment list"></ul>
+            <form class="comment-form" data-post="3" novalidate aria-label="Leave a comment">
+              <h4 class="form-heading">Leave a Comment</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name-3">Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="name-3" class="form-input" placeholder="Your name" required maxlength="80" />
+                </div>
+                <div class="form-group">
+                  <label for="email-3">Email (optional)</label>
+                  <input type="email" id="email-3" class="form-input" placeholder="you@example.com" maxlength="120" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message-3">Message <span aria-hidden="true">*</span></label>
+                <textarea id="message-3" class="form-input form-textarea" placeholder="Share your thoughts…" required maxlength="1000"></textarea>
+              </div>
+              <p class="form-error" id="error-3" role="alert" hidden></p>
+              <button type="submit" class="btn-submit">Post Comment</button>
+            </form>
+          </section>
+        </div>
+      </article>
+
+      <!-- ============ POST 4: Lifestyle ============ -->
+      <article class="post-card" id="post-4" data-category="lifestyle" aria-label="Blog post: Building a Morning Routine That Actually Works">
+        <figure class="post-image-wrap">
+          <img
+            src="https://picsum.photos/seed/morning/800/450"
+            alt="Person enjoying morning coffee by a sunny window"
+            class="post-image"
+            loading="lazy"
+          />
+          <figcaption class="post-category-badge">Lifestyle</figcaption>
+        </figure>
+
+        <div class="post-body">
+          <div class="post-meta">
+            <time datetime="2025-12-05">December 5, 2025</time>
+            <span class="read-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 4 min read</span>
+          </div>
+
+          <h2 class="post-title">Building a Morning Routine That Actually Works</h2>
+
+          <div class="post-content">
+            <p>
+              The way you start your morning sets the tone for the rest of the day. Yet most people begin their day
+              by reaching for their phone and scrolling through notifications before they've even gotten out of bed.
+              This reactive pattern can leave you feeling scattered and overwhelmed before your day has properly begun.
+            </p>
+            <p>
+              Research suggests that a consistent morning routine — one that includes movement, mindfulness, and a
+              nutritious breakfast — significantly improves focus, mood, and productivity throughout the day. The key
+              is not to copy someone else's routine wholesale, but to design one that aligns with your own goals,
+              constraints, and chronotype.
+            </p>
+            <p>
+              Start small: commit to just one new habit for two weeks before adding another. Whether it's a
+              five-minute meditation, a brisk ten-minute walk, or simply writing three things you're grateful for,
+              these micro-habits compound over time into transformative changes. Your future self will thank you.
+            </p>
+          </div>
+
+          <div class="post-tags" aria-label="Tags">
+            <span class="tag">Lifestyle</span>
+            <span class="tag">Productivity</span>
+            <span class="tag">Wellness</span>
+          </div>
+
+          <div class="share-buttons" aria-label="Share this post">
+            <span class="share-label">Share:</span>
+            <a href="https://twitter.com/intent/tweet?text=Building+a+Morning+Routine&url=%23post-4"
+               class="share-btn share-twitter" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=%23post-4"
+               class="share-btn share-facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&title=Building+a+Morning+Routine&url=%23post-4"
+               class="share-btn share-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <section class="comment-section" aria-label="Comments for post 4">
+            <h3 class="comment-section-title"><i class="fa-regular fa-comments" aria-hidden="true"></i> Comments</h3>
+            <ul class="comment-list" id="comments-4" aria-live="polite" aria-label="Comment list"></ul>
+            <form class="comment-form" data-post="4" novalidate aria-label="Leave a comment">
+              <h4 class="form-heading">Leave a Comment</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name-4">Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="name-4" class="form-input" placeholder="Your name" required maxlength="80" />
+                </div>
+                <div class="form-group">
+                  <label for="email-4">Email (optional)</label>
+                  <input type="email" id="email-4" class="form-input" placeholder="you@example.com" maxlength="120" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message-4">Message <span aria-hidden="true">*</span></label>
+                <textarea id="message-4" class="form-input form-textarea" placeholder="Share your thoughts…" required maxlength="1000"></textarea>
+              </div>
+              <p class="form-error" id="error-4" role="alert" hidden></p>
+              <button type="submit" class="btn-submit">Post Comment</button>
+            </form>
+          </section>
+        </div>
+      </article>
+
+    </div><!-- /posts-grid -->
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> The Daily Blog</p>
+      <p class="footer-copy">&copy; 2025 The Daily Blog. All rights reserved.</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-nav">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
